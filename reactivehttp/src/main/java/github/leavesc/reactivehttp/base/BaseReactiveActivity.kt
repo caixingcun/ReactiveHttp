@@ -41,7 +41,7 @@ open class BaseReactiveActivity : AppCompatActivity(), IUIActionEventObserver {
             show()
         }
     }
-
+    // takeIf 检查状态后 执行
     override fun dismissLoading() {
         loadDialog?.takeIf { it.isShowing }?.dismiss()
         loadDialog = null

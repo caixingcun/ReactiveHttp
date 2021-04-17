@@ -8,6 +8,7 @@ import kotlinx.coroutines.*
  * @Desc:
  * @GitHub：https://github.com/leavesC
  */
+// 协程 常用封装  包含绑定life类型函数
 interface ICoroutineEvent {
 
     /**

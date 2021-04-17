@@ -15,6 +15,7 @@ import kotlin.jvm.Throws
  * @Desc:
  * @GitHub：https://github.com/leavesC
  */
+// 数据请求 实现类 扩展了一些区分UI 和 参数的函数
 abstract class RemoteDataSource<Api : Any>(iUiActionEvent: IUIActionEvent?, apiServiceClass: Class<Api>) : BaseRemoteDataSource<Api>(iUiActionEvent, apiServiceClass) {
 
     fun <Data> enqueueLoading(apiFun: suspend Api.() -> IHttpWrapBean<Data>,

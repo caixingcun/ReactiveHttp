@@ -23,6 +23,7 @@ import java.util.concurrent.TimeUnit
  * @Desc:
  * @GitHub：https://github.com/leavesC
  */
+//  网络数据请求工具  retrofit工具类  + 异常处理函数 + UI回调事件
 abstract class BaseRemoteDataSource<Api : Any>(protected val iUiActionEvent: IUIActionEvent?, protected val apiServiceClass: Class<Api>) : ICoroutineEvent {
 
     companion object {

@@ -14,6 +14,7 @@ import kotlinx.coroutines.CoroutineScope
  * @Desc: BaseViewModel
  * @GitHub：https://github.com/leavesC
  */
+//基础的 更新UI的 ViewModel
 open class BaseReactiveViewModel : ViewModel(), IViewModelActionEvent {
 
     override val lifecycleSupportedScope: CoroutineScope

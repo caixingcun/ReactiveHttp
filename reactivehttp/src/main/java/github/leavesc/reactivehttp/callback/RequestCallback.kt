@@ -6,6 +6,7 @@ package github.leavesc.reactivehttp.callback
  * @Desc: Callback
  * @GitHub：https://github.com/leavesC
  */
+// 常规回调处理  实现
 class RequestCallback<Data>(internal var onSuccess: ((Data) -> Unit)? = null,
                             internal var onSuccessIO: (suspend (Data) -> Unit)? = null) : BaseRequestCallback() {
 

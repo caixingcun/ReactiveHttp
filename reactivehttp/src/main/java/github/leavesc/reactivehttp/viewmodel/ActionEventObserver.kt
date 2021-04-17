@@ -11,6 +11,7 @@ import kotlinx.coroutines.Job
  * @Desc: 用于定义 View 和  ViewModel 均需要实现的一些 UI 层行为
  * @GitHub：https://github.com/leavesC
  */
+// 网络请求 常规UI状态接口
 interface IUIActionEvent : ICoroutineEvent {
 
     fun showLoading(job: Job?)
@@ -22,7 +23,7 @@ interface IUIActionEvent : ICoroutineEvent {
     fun finishView()
 
 }
-
+// 定义一些 liveData ，用来存储UI变更通知消息
 interface IViewModelActionEvent : IUIActionEvent {
 
     val showLoadingEventLD: MutableLiveData<ShowLoadingEvent>
@@ -50,13 +51,13 @@ interface IViewModelActionEvent : IUIActionEvent {
     }
 
 }
-
+// UI 状态变更事件 监听
 interface IUIActionEventObserver : IUIActionEvent {
 
     val lContext: Context?
 
     val lLifecycleOwner: LifecycleOwner
-
+    // 根据字节码 获取ViewModel
     fun <VM> getViewModel(clazz: Class<VM>,
                           factory: ViewModelProvider.Factory? = null,
                           initializer: (VM.(lifecycleOwner: LifecycleOwner) -> Unit)? = null): Lazy<VM> where VM : ViewModel, VM : IViewModelActionEvent {
@@ -84,7 +85,7 @@ interface IUIActionEventObserver : IUIActionEvent {
             initializer?.invoke(this, lLifecycleOwner)
         }
     }
-
+    // 根据VM生成 注册事件
     fun <VM> generateActionEvent(viewModel: VM) where VM : ViewModel, VM : IViewModelActionEvent {
         viewModel.showLoadingEventLD.observe(lLifecycleOwner, Observer {
             this@IUIActionEventObserver.showLoading(it.job)

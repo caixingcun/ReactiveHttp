@@ -13,6 +13,7 @@ import github.leavesc.reactivehttp.bean.IHttpWrapBean
  * @param errorMessage     服务器返回的异常信息 或者是 请求过程中抛出的信息，是最原始的异常信息
  * @param realException    用于当 code 是本地错误码时，存储真实的运行时异常
  */
+// 请求异常处理
 open class BaseHttpException(val errorCode: Int, val errorMessage: String, val realException: Throwable?) : Exception(errorMessage) {
 
     companion object {

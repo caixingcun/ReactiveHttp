@@ -6,6 +6,7 @@ package github.leavesc.reactivehttp.bean
  * @Desc: 规范网络请求返回结果必须包含的几种参数类型
  * @GitHub：https://github.com/leavesC
  */
+//通用网络请求 基本元素（后台约定）
 interface IHttpWrapBean<Data> {
 
     /**

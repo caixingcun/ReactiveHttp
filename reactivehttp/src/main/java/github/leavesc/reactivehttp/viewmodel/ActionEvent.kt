@@ -8,6 +8,7 @@ import kotlinx.coroutines.Job
  * @Desc:
  * @GitHub：https://github.com/leavesC
  */
+// 常规事件
 open class BaseActionEvent
 
 class ShowLoadingEvent(val job: Job?) : BaseActionEvent()

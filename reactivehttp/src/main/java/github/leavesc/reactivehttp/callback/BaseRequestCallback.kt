@@ -8,6 +8,7 @@ import github.leavesc.reactivehttp.exception.BaseHttpException
  * @Desc: Callback
  * @GitHub：https://github.com/leavesC
  */
+// 基本 请求回调 公共处理接口  都带默认值 可空
 open class BaseRequestCallback(internal var onStart: (() -> Unit)? = null,
                                internal var onCancelled: (() -> Unit)? = null,
                                internal var onFailed: ((BaseHttpException) -> Unit)? = null,
