@@ -1,8 +1,6 @@
 package github.leavesc.reactivehttpsamples.core.http
 
-import github.leavesc.reactivehttpsamples.core.bean.DistrictBean
-import github.leavesc.reactivehttpsamples.core.bean.ForecastsBean
-import github.leavesc.reactivehttpsamples.core.bean.HttpWrapBean
+import github.leavesc.reactivehttpsamples.core.bean.*
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -26,4 +24,6 @@ interface ApiService {
     @GET("weather/weatherInfo?extensions=all")
     suspend fun getWeather(@Query("city") city: String): HttpWrapBean<List<ForecastsBean>>
 
+    @GET("api/v2/banners")
+    suspend fun getBanner():HttpWrapBean200<List<BannerBean>>
 }
